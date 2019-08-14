@@ -1,0 +1,63 @@
+version: '2'
+
+services:
+  identitydatabase:
+    build: ./identityDatabase
+    volumes:
+      - ./dbs/identityDatabase:/data/db
+    ports:
+      - "27019:27019"
+    networks:
+      identitydb:
+        ipv4_address: 172.97.0.1
+  usersdatabase:
+    build: ./usersDatabase
+    volumes:
+      - ./dbs/usersDatabase:/data/db
+    ports:
+      - "27018:27018"
+    networks:
+      usersdb:
+        ipv4_address: 172.98.0.67
+  identityservice:
+    build: ./identityService
+    depends_on:
+      - identitydatabase
+    ports:
+      - "3003:3003"
+    networks:
+      identitydb:
+      inapi:
+  usersservice:
+    build: ./usersService
+    depends_on:
+      - usersdatabase
+    ports:
+      - "3004:3004"
+    networks:
+      usersdb:
+      inapi:
+  mainservice:
+    build: ./mainService
+    ports:
+      - "3005:3005"
+    networks:
+      inapi:
+      api:
+
+networks:
+  identitydb:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.97.0.0/26
+        gateway: 172.97.0.2
+  usersdb:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.98.0.64/26
+        gateway: 172.98.0.66
+  inapi:
+    driver: bridge
+  api:

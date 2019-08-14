@@ -1,0 +1,7 @@
+client/node_modules
+identityService/node_modules
+usersService/node_modules
+mainService/node_modules
+
+mainService/dist
+dbs/

@@ -1,0 +1,22 @@
+{
+  "name": "usersservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/debug": "^4.1.4",
+    "@types/mongoose": "^5.5.11",
+    "@types/restify": "^7.2.12",
+    "mongoose": "^5.6.8",
+    "restify": "^8.4.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}
