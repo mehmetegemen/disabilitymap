@@ -14,7 +14,7 @@
     "@types/mongoose": "^5.5.11",
     "@types/restify": "^7.2.12",
     "bcrypt": "^3.0.6",
-    "mongoose": "^5.6.8",
+    "mongoose": "^5.7.5",
     "restify": "^8.4.0"
   },
   "devDependencies": {
