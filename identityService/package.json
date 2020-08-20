@@ -13,7 +13,7 @@
     "@types/debug": "^4.1.4",
     "@types/mongoose": "^5.5.11",
     "@types/restify": "^7.2.12",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "mongoose": "^5.6.8",
     "restify": "^8.4.0"
   },
